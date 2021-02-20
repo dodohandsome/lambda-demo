@@ -1,0 +1,21 @@
+service: lambda-demo
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  stage: demo # ตั้งชื่อบ่งบอกว่า api นี้เป็นเส้นอะไร เช่น UAT DEV PROD
+  region: ap-southeast-1 
+functions:
+  app:
+    handler: app.server # ชี้ไปที่ file app.js หรือ file index ของการ Run Code ตามด้วยชื่อ Function
+    events:
+      - http:
+          path: /
+          method: ANY # ให้ ทุกอย่างไหลเข้าได้ GET POST UPDATE DELETE
+          cors: true 
+      - http: # ทุกเส้นทางจะถูก proxy ไป Express router
+          path: /{proxy+} 
+          method: ANY
+          cors: true

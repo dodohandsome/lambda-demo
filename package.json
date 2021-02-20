@@ -1,0 +1,28 @@
+{
+  "name": "lambda-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "handler.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dodohandsome/lambda-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dodohandsome/lambda-demo/issues"
+  },
+  "homepage": "https://github.com/dodohandsome/lambda-demo#readme",
+  "dependencies": {
+    "aws-sdk": "^2.848.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-multipart-file-parser": "^0.1.2",
+    "serverless-http": "^2.7.0"
+  }
+}
